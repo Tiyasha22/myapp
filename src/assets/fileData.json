@@ -1,0 +1,37 @@
+[
+  { "name": "public", "id": 1, "isFolder": true, "children": [] },
+  {
+    "name": "src",
+    "id": 2,
+    "isFolder": true,
+    "children": [
+      {
+        "name": "assets",
+        "id": 3,
+        "isFolder": true,
+        "children": [{ "name": "data.json", "isFolder": false }]
+      },
+      {
+        "name": "components",
+        "id": 4,
+        "isFolder": true,
+        "children": [
+          {
+            "name": "Test",
+            "id": 5,
+            "isFolder": true,
+            "children": [
+              { "name": "CounterTest", "id": 6, "isFolder": false },
+              { "name": "HomeTest", "id": 7, "isFolder": false }
+            ]
+          },
+          { "name": "Counter", "id": 8, "isFolder": false },
+          { "name": "Home", "id": 9, "isFolder": false },
+          { "name": "About", "id": 10, "isFolder": false }
+        ]
+      }
+    ]
+  },
+  { "name": "package.json", "id": 11, "isFolder": false },
+  { "name": "README.md", "id": 12, "isFolder": false }
+]
