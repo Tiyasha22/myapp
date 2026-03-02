@@ -11,37 +11,38 @@ import SearchLive from "./components/SearchLive";
 import NavBar from "./components/NavBar";
 import FileExplorer from "./components/FileExplorer";
 import fileData from "./assets/fileData.json";
+import SearchWithApi from "./components/SearchWithApi";
 const App = () => {
-  const [data, setData] = useState(fileData);
-  const name = prompt("enter folder name");
-  const addNodeToList = (parentId) => {
-    const updateTree = (list) => {
-      return data.map((node) => {
-        if (node.id === parentId) {
-          return {
-            ...node,
-            children: [
-              ...node.children,
-              { id: "123", name: name, isFolder: true, children: [] },
-            ],
-          };
-        }
-      });
-    };
-  };
-  const deleteNode = (parentId) => {
-    const updateTree = (list) => {
-      return list
-        .filter((node) => node.id !== parentId)
-        .map((node) => {
-          if (node.children) {
-            return { ...node, children: updateTree(node.children) };
-          }
-          return node;
-        });
-    };
-    setData((prev) => updateTree(prev));
-  };
+  // const [data, setData] = useState(fileData);
+  // const name = prompt("enter folder name");
+  // const addNodeToList = (parentId) => {
+  //   const updateTree = (list) => {
+  //     return data.map((node) => {
+  //       if (node.id === parentId) {
+  //         return {
+  //           ...node,
+  //           children: [
+  //             ...node.children,
+  //             { id: "123", name: name, isFolder: true, children: [] },
+  //           ],
+  //         };
+  //       }
+  //     });
+  //   };
+  // };
+  // const deleteNode = (parentId) => {
+  //   const updateTree = (list) => {
+  //     return list
+  //       .filter((node) => node.id !== parentId)
+  //       .map((node) => {
+  //         if (node.children) {
+  //           return { ...node, children: updateTree(node.children) };
+  //         }
+  //         return node;
+  //       });
+  //   };
+  //   setData((prev) => updateTree(prev));
+  // };
   return (
     <div className="App">
       {/* <TodoList /> */}
@@ -55,11 +56,12 @@ const App = () => {
       {/* <SearchLive /> */}
       {/* <NavBar /> */}
 
-      <FileExplorer
+      {/* <FileExplorer
         data={data}
         addNodeToList={addNodeToList}
         deleteNode={deleteNode}
-      />
+      /> */}
+      <SearchWithApi/>
     </div>
   );
 };
